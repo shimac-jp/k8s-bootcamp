@@ -6,8 +6,9 @@ var host;
 var handleRequest = function(request, response) {
   response.setHeader('Content-Type', 'text/plain');
   response.writeHead(200);
-  response.write("v=1, podName=");
-  response.end(host);
+  response.write("podName=");
+  response.write(host);
+  response.end(", v=1\n");
   console.log("Hostname:" ,host, "| Total Requests:", ++requests,"| App Uptime:", (new Date() - startTime)/1000 , "seconds", "| Log Time:",new Date());
 }
 var www = http.createServer(handleRequest);
