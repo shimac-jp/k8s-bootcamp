@@ -6,8 +6,7 @@ var host;
 var handleRequest = function(request, response) {
   response.setHeader('Content-Type', 'text/plain');
   response.writeHead(200);
-  response.write("DDD. Kubernetes Bootcamp App Started At:",startTime, "| Running On: " ,host, "\n");
-  response.write(host);
+  response.write("podName: " ,podname, "\n");
   response.end(" | v=1\n");
   console.log("Hostname:" ,host, "| Total Requests:", ++requests,"| App Uptime:", (new Date() - startTime)/1000 , "seconds", "| Log Time:",new Date());
 }
