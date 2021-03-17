@@ -6,7 +6,7 @@ var host;
 var handleRequest = function(request, response) {
   response.setHeader('Content-Type', 'text/plain');
   response.writeHead(200);
-  response.write("podName: " ,podname, "\n");
+  response.write("podName: " ,host, "\n");
   response.end(" | v=1\n");
   console.log("Hostname:" ,host, "| Total Requests:", ++requests,"| App Uptime:", (new Date() - startTime)/1000 , "seconds", "| Log Time:",new Date());
 }
